@@ -1,0 +1,37 @@
+{
+  "name": "save-to-mongo",
+  "description": "Save an object stream directly to MongoDB. Bulk modes supported (ordered / unordered) with configurable ops group size.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Michele Pangrazzi <xmikex83@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mpangrazzi/save-to-mongo.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -t 10000"
+  },
+  "dependencies": {
+    "debug": "^2.1.0",
+    "mongodb": "^1.4.23"
+  },
+  "devDependencies": {
+    "JSONStream": "^0.10.0",
+    "mocha": "^2.0.1",
+    "monk": "^0.9.1",
+    "should": "^4.4.1"
+  },
+  "engines": {
+    "node": ">= 0.10.x"
+  },
+  "keywords": [
+    "mongodb",
+    "stream",
+    "writable",
+    "save",
+    "bulk",
+    "ordered",
+    "unordered"
+  ]
+}
