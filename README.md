@@ -96,7 +96,7 @@ time node ./examples/default.js # real: 0m0.450s
 time node ./examples/unordered.js # real: 0m0.340s
 ```
 
-**UPDATE**: for **100000** records (similar to the ones used in examples), using bulk unoredered method drop execution time from 2:42m to 1:42m. Not bad :)
+**UPDATE**: for **100000** records (similar to the ones used in examples), using bulk unordered method drop execution time from 2:42m to 1:42m. Not bad :)
 
 ## Debug
 
