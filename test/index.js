@@ -177,4 +177,41 @@ describe('Save-To-Mongo', function() {
   });
 
 
+  it('Should continue stream if an error has occurred (e.g.: E11000 duplicate key error index)', function(done) {
+
+    var collection = db.get('savetomongo');
+    var dup = require('../examples/accounts.json')[0];
+
+    // Monk "bug". See https://github.com/Automattic/monk/issues/72
+
+    collection.id = function(id) { return id; };
+
+    var saveToMongo = SaveToMongo({
+      uri: 'mongodb://127.0.0.1:27017/test',
+      collection: 'savetomongo'
+    });
+
+    saveToMongo.on('write-error', function(err) {
+      err.code.should.be.exactly(11000);
+    });
+
+    collection.insert(dup, function(err, object) {
+
+      accounts
+        .pipe(JSONStream.parse('*'))
+        .pipe(saveToMongo)
+        .on('done', function() {
+
+          collection.count({}, function(err, count) {
+            count.should.be.exactly(100);
+            done();
+          });
+
+        });
+
+    });
+
+  });
+
+
 });

@@ -1,7 +1,7 @@
 {
   "name": "save-to-mongo",
   "description": "Save an object stream directly to MongoDB. Bulk modes supported (ordered / unordered) with configurable ops group size.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "author": "Michele Pangrazzi <xmikex83@gmail.com>",
   "license": "MIT",
