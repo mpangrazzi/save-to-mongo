@@ -1,3 +1,9 @@
+1.0.0 / 2017-02-20
+==================
+
+* Updated deps
+* Fixed a bug related to very old deps
+
 0.0.2 / 2015-01-03
 ==================
 
